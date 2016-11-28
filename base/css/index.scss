@@ -1,0 +1,25 @@
+//sass style
+//-----------------------------------
+@import './px2rem.scss';
+$designWidth : 750;
+$fontStack:  Microsoft Yahei,   Helvetica, sans-serif;
+$primaryColor: white;
+html{
+	width:  100% ;
+	height :100% ;
+	overflow : hidden ;
+}
+body {
+  font-family: $fontStack;
+  color: $primaryColor;
+width:16rem;margin:0 auto;
+height  : 100% ;
+  overflow : hidden ;
+}
+audio{
+	display : none ; 
+}
+img{
+	display : block ;
+	width : 100% ;
+}
