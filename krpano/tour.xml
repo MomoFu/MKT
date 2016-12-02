@@ -1,0 +1,242 @@
+<krpano version="1.19" title="Virtual Tour">
+
+	<include url="skin/vtourskin.xml" />
+
+    
+	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
+	
+	<plugin name="gyro" devices="html5" keep="true"
+        url="plugins/gyro2.js" 
+        enabled="true"
+        camroll="true"
+        friction="0.0"
+        touch_mode="full"
+        sensor_mode="1"
+        autocalibration="false"
+        onavailable=""
+        onunavailable=""
+        onenable=""
+        ondisable=""
+        />
+
+	<!--
+	    For an alternative skin design either change the <skin_settings> values 
+	    from above or optionally include one of the predefined designs from below.
+	-->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+
+
+	<!-- startup action - load the first scene -->
+	<action name="startup" autorun="onstart">
+		if(startscene === null OR !scene[get(startscene)], copy(startscene,scene[0].name); );
+		loadscene(get(startscene), null, MERGE);
+		if(startactions !== null, startactions() );
+
+		
+	</action>
+
+	<action name="intro">
+		
+		lookto(-10,0, 0 , smooth());
+   		js( test('Lookat', get(view.hlookat), get(view.vlookat)) );
+  </action>
+
+   <action name="intro0">
+     
+        removehotspot('Vtest0');
+        js( lightStar() );
+  </action>
+
+  <action name="intro1">
+     
+        removehotspot('Vtest1');
+         js( lightStar() );
+  </action>
+
+  <action name="intro2">
+     
+        removehotspot('Vtest2');
+         js( lightStar() );
+  </action>
+
+  <action name="intro3">
+     
+        removehotspot('Vtest3');
+         js( lightStar() );
+  </action>
+
+  <action name="intro4">
+     
+        removehotspot('Vtest4');
+         js( lightStar() );
+  </action>
+
+
+
+	
+	<scene name="scene_pano" title="pano" onstart="" thumburl="panos/pano.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="-38" vlookat="0" fovtype="MFOV" fov="0"  fovmin="65" fovmax="100" />
+
+
+		<preview url="panos/pano.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/pano.tiles/pano_%s.jpg" />
+
+			<cube url="panos/pano.tiles/mobile/pano_%s.jpg" devices="mobile" />
+		</image>
+
+		
+		<hotspot name="Vtest0"
+         type="image"
+         url="mooncake/m1.png"
+         keep="true"
+         visible="true"
+         enabled="true"
+         handcursor="true"
+         maskchildren="false"
+         zorder=""
+         style=""
+         ath="100.216" atv="22.400"
+         edge="center"
+         zoom="true"
+         distorted="false" rx="0.0" ry="0.0" rz="0.0"
+         width="50" height="50"
+         scale="1.0"
+         rotate="0.0"
+         alpha="1.0"
+         onover=""
+         onhover=""
+         onout=""
+         ondown=""
+         onup=""
+         onclick="intro0()"
+         onloaded=""
+         />
+
+         <hotspot name="Vtest1"
+         type="image"
+         url="mooncake/m2.png"
+         keep="true"
+         visible="true"
+         enabled="true"
+         handcursor="true"
+         maskchildren="false"
+         zorder=""
+         style=""
+         ath="-178.282" atv="6.343"
+         edge="center"
+         zoom="true"
+         distorted="false" rx="0.0" ry="0.0" rz="0.0"
+         width="50" height="50"
+         scale="1.0"
+         rotate="40.0"
+         alpha="1.0"
+         onover=""
+         onhover=""
+         onout=""
+         ondown=""
+         onup=""
+         onclick="intro1()"
+         onloaded=""
+         />
+
+          <hotspot name="Vtest2"
+         type="image"
+         url="mooncake/m3.png"
+         keep="true"
+         visible="true"
+         enabled="true"
+         handcursor="true"
+         maskchildren="false"
+         zorder=""
+         style=""
+         ath="-167.657" atv="-89.439"
+         edge="center"
+         zoom="true"
+         distorted="false" rx="0.0" ry="0.0" rz="0.0"
+         width="100" height="100"
+         scale="1.0"
+         rotate="0.0"
+         alpha="1.0"
+         onover=""
+         onhover=""
+         onout=""
+         ondown=""
+         onup=""
+         onclick="intro2()"
+         onloaded=""
+         />
+
+         <hotspot name="Vtest3"
+         type="image"
+         url="mooncake/m4.png"
+         keep="true"
+         visible="true"
+         enabled="true"
+         handcursor="true"
+         maskchildren="false"
+         zorder=""
+         style=""
+         ath="-63.038" atv="-0.040"
+         edge="center"
+         zoom="true"
+         distorted="false" rx="0.0" ry="0.0" rz="0.0"
+         width="50" height="50"
+         scale="1.0"
+         rotate="0.0"
+         alpha="1.0"
+         onover=""
+         onhover=""
+         onout=""
+         ondown=""
+         onup=""
+         onclick="intro3()"
+         onloaded=""
+         />
+
+         <hotspot name="Vtest4"
+         type="image"
+         url="mooncake/m5.png"
+         keep="true"
+         visible="true"
+         enabled="true"
+         handcursor="true"
+         maskchildren="false"
+         zorder=""
+         style=""
+         ath="14.727" atv="-24.888"
+         edge="center"
+         zoom="true"
+         distorted="false" rx="0.0" ry="0.0" rz="0.0"
+         width="75" height="75"
+         scale="1.0"
+         rotate="0.0"
+         alpha="1.0"
+         onover=""
+         onhover=""
+         onout=""
+         ondown=""
+         onup=""
+         onclick="intro4()"
+         onloaded=""
+         />
+        <!-- place your scene hotspots here -->
+
+		<!-- place your scene hotspots here -->
+
+
+	</scene>
+
+    
+
+  
+
+
+</krpano>
